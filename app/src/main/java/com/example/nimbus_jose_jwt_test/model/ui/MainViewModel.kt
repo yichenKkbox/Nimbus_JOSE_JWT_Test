@@ -21,4 +21,16 @@ class MainViewModel: ViewModel() {
             }
         }
     }
+
+    fun testEcdh(encryptedText: String) {
+        viewModelScope.launch {
+            testRepository.testEcdh(encryptedText).let {
+                if (it.isSuccessful) {
+                    Log.d(TAG, "testRsa: result: $it")
+                } else {
+                    Log.d(TAG, "testRsa: error: ${it.errorBody()}")
+                }
+            }
+        }
+    }
 }

@@ -11,4 +11,8 @@ interface TestApi {
     //https://karuta.kkbox.io/schemas/api-metering/operations/DebugEchoRsa
     @POST("v1/debug_echo/rsa")
     suspend fun testRsa(@Body data: RequestBody) : Response<JsonObject>
+
+    //https://karuta.kkbox.io/schemas/api-metering/operations/DebugEchoEcdh
+    @POST("/v1/debug_echo/ecdh")
+    suspend fun testEcdh(@Body data: RequestBody) : Response<JsonObject>
 }

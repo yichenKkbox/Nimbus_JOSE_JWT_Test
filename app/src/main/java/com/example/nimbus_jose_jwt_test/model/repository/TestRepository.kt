@@ -12,4 +12,8 @@ class TestRepository {
     suspend fun testRsa(encryptedText: String): Response<JsonObject> {
         return service.testRsa(encryptedText.toRequestBody())
     }
+
+    suspend fun testEcdh(encryptedText: String): Response<JsonObject> {
+        return service.testEcdh(encryptedText.toRequestBody())
+    }
 }
